@@ -52,18 +52,33 @@
             background-color: #007bff;
             padding: 8px 12px;
             border-radius: 5px;
-        }
-        footer {
-            background-color: #000;
-            color: #bbb;
-            text-align: center;
-            padding: 15px;
-            margin-top: 30px;
-        }
-        .courtesy p {
-            margin: 5px 0;
-            font-size: 14px;
-        }
+        }footer {
+    background-color: #f8f8f8; /* Light gray background */
+    padding: 15px;
+    text-align: center;
+    font-size: 14px;
+    border-top: 1px solid #ddd; /* Subtle border */
+}
+
+footer ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0;
+}
+
+footer ul li {
+    display: inline-block; /* Make items appear in a row */
+    margin: 0 10px;
+}
+
+footer a {
+    color: #007bff; /* Nice blue color */
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
 
 
         /* Layout */
@@ -343,17 +358,15 @@ This project allows administrators to manage employee shifts and send notificati
             </section>
         </main>
     </div>
-     <footer>
+    <footer>
     <p>Videos courtesy of YouTube creators and Shutterstock:</p>
-    <div id="courtesy">
-         <ul>
-        <a href="https://www.youtube.com/watch?v=8DJi4PrdFCg" target="_blank">YouTube Video 1</a>
-        <a href="https://www.youtube.com/watch?v=odyoqNhaRTY" target="_blank">YouTube Video 2</a>
-        <a href="https://www.shutterstock.com/video/clip-1100037295" target="_blank">Shutterstock Video</a>
+    <ul>
+        <li><a href="https://www.youtube.com/watch?v=8DJi4PrdFCg" target="_blank">YouTube Video 1</a></li>
+        <li><a href="https://www.youtube.com/watch?v=odyoqNhaRTY" target="_blank">YouTube Video 2</a></li>
+        <li><a href="https://www.shutterstock.com/video/clip-1100037295" target="_blank">Shutterstock Video</a></li>
     </ul>
-    </div>
-   
-     </footer>
+    </footer>
+
 
     <script>
         function changeSlide(direction, sliderId) {
