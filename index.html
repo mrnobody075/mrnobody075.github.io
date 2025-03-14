@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="static/style.css">
+    <script defer src="static/script.js"></script>
+</head>
+<body >
+
+<header>
+    <div class="header-left">VISHAL HEGDE</div>
+
+    <div class="nav-container">
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="#project">Projects</a>
+        </nav>
+        <a href="#contact" class="contact-btn">Contact ↗</a>
+    </div>
+</header>
+
+<section class="about">
+    <h3>Vishal Hegde</h3>
+    <p>
+        I'm someone who enjoys building things that actually solve problems. I like working on projects that involve
+        networking, system design, and data analysis—especially when they have a real-world impact. I prefer hands-on
+        learning over just theory and always look for ways to improve what I build. Whether it's working on software that
+        simplifies tasks or diving into complex systems to understand how they work, I’m always looking for new challenges.
+        I believe in writing clean, efficient code and constantly refining my skills to create something meaningful.
+    </p>
+
+    <h3>Skills & Technologies</h3>
+    <ul>
+        <li><strong>→ Programming:</strong> Python, Java, C, SQL</li>
+        <li>→ Version control(Git & GitHub), Proficient in Linux-based OS, HTML/CSS, OOPs</li>
+        <li>→ Data Visualisation(pandas/ numpy/ matplotlib), Web Development(Flask/ Django)</li>
+        <li>→ PostgreSQL, Docker</li>
+    </ul>
+
+</section>
+ <!-- Resume Download Button -->
+    <div class="resume">
+        <a href="static/internshipresume.pdf" download>
+            <button class="resume-btn">Download Resume</button>
+        </a>
+    </div>
+
+
+
+<section class="projects" id="project">
+    <h2>Featured Projects</h2>
+    <p>A curated selection of my projects.</p>
+    <a href="projects.html" class="see-all-btn">See all ↗</a>
+    <div class="projects-container">
+
+        <!-- Example Project Card -->
+        <a href="project1.html" class="project-link">
+        <div class="project-card">
+            <img src="static/login.png" alt="Project Image">
+            <div class="project-info">
+                <h3>2024 • Category</h3>
+                <h2>Workforce Efficiency Monitoring using Computer Vision</h2>
+                <p>
+                   The Workforce Efficiency & Attendance System uses computer vision for worker detection, trespassing alerts, and zone monitoring.
+                    It features facial recognition for attendance, employee self-service, and admin controls for record management and notifications.
+                    The system also provides data visualization and generates reports in Excel and PDF formats.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <h2>Let's Connect</h2>
+        <p>Feel free to reach out to me!</p>
+
+        <div class="contact-links">
+            <a href="https://github.com/mrnobody075?tab=repositories" target="_blank" class="contact-btn">
+                <img src="static/github.svg" alt="GitHub"> GitHub
+            </a>
+
+            <a href="https://www.linkedin.com/in/hegdevishals75" target="_blank" class="contact-btn">
+                <img src="static/linkedin.svg" alt="LinkedIn"> LinkedIn
+            </a>
+
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form">
+            <h3>Or Send a Message</h3>
+            <form onsubmit="sendEmail(event)">
+                <input type="text" id="name" placeholder="Your Name" required>
+                <input type="email" id="email" placeholder="Your Email" required>
+                <textarea id="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+        
+        <script>
+        function sendEmail(event) {
+            event.preventDefault(); // Prevent actual form submission
+        
+            // Get user input
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var message = document.getElementById("message").value;
+        
+            // Create mailto link
+            var mailtoLink = `mailto:hegdevishals74@gmail.com.com?subject=Message from ${name}&body=Email: ${email}%0D%0A%0D%0A${message}`;
+        
+            // Open mail client
+            window.location.href = mailtoLink;
+        }
+        </script>
+        
+    </section>
+<footer>
+    <div class="footer-icons">
+        <a href="mailto:hegdevishals75@email.com">
+            <img src="static/email.svg" alt="Email">
+        </a>
+        <a href="https://github.com/mrnobody075?tab=repositories" target="_blank">
+            <img src="static/github.svg" alt="GitHub">
+        </a>
+        <a href="https://www.linkedin.com/in/hegdevishals75" target="_blank">
+            <img src="static/linkedin.svg" alt="LinkedIn">
+        </a>
+    </div>
+    <p class="copyright">Vishal Hegde</p>
+</footer>
+
+
+</body>
+</html>
