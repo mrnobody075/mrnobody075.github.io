@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro&family=Space+Grotesk:wght@300..700&display=swap"
+        rel="stylesheet"
+    />
+
+    <title>Online Electronics Store • OAuth & Razorpay</title>
+
+    <style>
+        /* Global Styles */
+        * {
+            font-family: "Space Grotesk", sans-serif;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background-color: #000;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        .contact-btn {
+            background-color: #007bff;
+            padding: 8px 12px;
+            border-radius: 5px;
+        }
+
+        /* Layout */
+        .container {
+            display: flex;
+            padding: 80px 30px 30px; /* space for fixed header */
+        }
+        .content {
+            width: 70%;
+            padding-right: 300px; /* space for sidebar */
+        }
+
+        /* Sidebar Navigation */
+        .sidebar {
+            width: 250px;
+            background: #1c1c1c;
+            padding: 20px;
+            position: fixed;
+            right: 0;
+            top: 80px; /* below header */
+            height: calc(100vh - 80px);
+            overflow-y: auto;
+            border-left: 2px solid #333;
+        }
+        .sidebar h3 {
+            color: #ddd;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            margin: 10px 0;
+        }
+        .sidebar ul li a {
+            color: #bbb;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .sidebar ul li a:hover {
+            color: #007bff;
+        }
+
+        /* Sections */
+        section {
+            padding: 50px 0;
+            border-bottom: 1px solid #333;
+        }
+        h2 {
+            color: #ffffff;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 16px;
+            color: #bbb;
+        }
+
+        /* Images */
+        img {
+            width: 100%;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        /* Slider */
+        .slider-container {
+            width: 100%;
+            max-width: 800px;
+            overflow: hidden;
+            position: relative;
+            margin: auto;
+            border-radius: 10px;
+        }
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .slide {
+            min-width: 100%;
+            transition: 0.5s;
+        }
+        .slide img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .prev,
+        .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #ffffff;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            font-size: 24px;
+            border-radius: 50%;
+        }
+        .prev {
+            left: 10px;
+        }
+        .next {
+            right: 10px;
+        }
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #f8f8f8;
+            padding: 15px;
+            text-align: center;
+            font-size: 14px;
+            border-top: 1px solid #ddd;
+            color: #000;
+        }
+        footer ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        footer ul li {
+            display: inline-block;
+            margin: 0 10px;
+        }
+        footer a {
+            color: #000;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">VISHAL HEGDE</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="projects.html">Projects</a>
+            <a href="index.html#contact" class="contact-btn">Contact ↗</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h3>Sections</h3>
+            <ul>
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#login">Login & OAuth</a></li>
+                <li><a href="#home">Home Page</a></li>
+                <li><a href="#product">Product Page</a></li>
+                <li><a href="#review">Write Review</a></li>
+                <li><a href="#cart">Cart</a></li>
+                <li><a href="#checkout">Checkout</a></li>
+                <li><a href="#payment">Payment (Razorpay)</a></li>
+                <li><a href="#wishlist">Wishlist</a></li>
+                <li><a href="#profile">Profile</a></li>
+                <li><a href="#orders">Orders</a></li>
+            </ul>
+        </aside>
+
+        <!-- Content -->
+        <main class="content">
+            <!-- Overview -->
+            <section id="overview">
+                <h2>Overview</h2>
+                <p>
+                    The <strong>Online Electronics Store</strong> is a full‑stack Django application featuring Google OAuth authentication, secure checkout via the Razorpay payment gateway, and a rich e‑commerce workflow: product browsing, dynamic carts, wishlists, order history, user reviews, coupons, and more. Clean UI components are built with Bootstrap, while PostgreSQL powers persistent data storage.
+                </p>
+            </section>
+
+            <!-- Login & OAuth -->
+            <section id="login">
+                <h2>Login & OAuth</h2>
+                <img src="static/oes_login.png" alt="Login with Google OAuth and Django auth" />
+                <p>
+                    Users can sign in using Google OAuth for seamless, password‑less access, or fall back to Django’s native authentication system. Dedicated signup links and CSRF‑protected forms round out a secure onboarding flow.
+                </p>
+            </section>
+
+            <!-- Home Page -->
+            <section id="home">
+                <h2>Home Page</h2>
+                <img src="static/oes_home.png" alt="Home page product grid" />
+                <p>
+                    The landing page showcases featured electronics as responsive cards, complete with search, category filters, and a sticky navbar. Each product card offers quick‑add to cart functionality and price badges for an intuitive shopping experience.
+                </p>
+            </section>
+
+            <!-- Product Page -->
+            <section id="product">
+                <h2>Product Page</h2>
+                <img src="static/oes_product.png" alt="Detailed product view" />
+                <p>
+                    Detailed product views display brand, specifications, high‑resolution imagery, real‑time stock status, and CTA buttons to <em>Add to Wishlist</em>, <em>Add to Cart</em>, or <em>Write Review</em>. Existing reviews render beneath with a star rating component.
+                </p>
+            </section>
+
+            <!-- Write Review -->
+            <section id="review">
+                <h2>Write Review</h2>
+                <img src="static/oes_review.png" alt="Write a product review" />
+                <p>
+                    Authenticated customers can leave feedback via Markdown‑enabled text‑areas and a five‑star rating widget. Server‑side validation ensures quality submissions before persisting to the database.
+                </p>
+            </section>
+
+            <!-- Cart -->
+            <section id="cart">
+                <h2>Cart</h2>
+                <img src="static/oes_cart.png" alt="Cart page" />
+                <p>
+                    The cart summary lists selected items, quantity controls, per‑item totals, and a running grand total. Users can update quantities in place, delete entries, or migrate items back to their wishlist with a single click.
+                </p>
+            </section>
+
+            <!-- Checkout -->
+            <section id="checkout">
+                <h2>Checkout</h2>
+                <img src="static/oes_checkout.png" alt="Checkout page" />
+                <p>
+                    During checkout, shoppers select a saved address or add a new one, confirm contact numbers, and apply coupon codes. Discount values auto‑recalculate, displaying <strong>Payable</strong> totals in real time.
+                </p>
+            </section>
+
+            <!-- Payment (carousel with two images) -->
+            <section id="payment">
+                <h2>Payment &nbsp;•&nbsp; Razorpay Gateway</h2>
+                <div class="slider-container" id="sliderPayment">
+                    <div class="slides">
+                        <div class="slide"><img src="static/oes_payment1.png" alt="Razorpay demo payment 1" /></div>
+                        <div class="slide"><img src="static/oes_payment2.png" alt="Razorpay demo payment 2" /></div>
+                    </div>
+                    <button class="prev" onclick="changeSlide(-1, 'sliderPayment')">&#10094;</button>
+                    <button class="next" onclick="changeSlide(1, 'sliderPayment')">&#10095;</button>
+                </div>
+                <p>
+                    Razorpay’s test mode processes transactions with mock card credentials, returning payment signatures that our webhook‑backed handler verifies before finalising orders.
+                </p>
+            </section>
+
+            <!-- Wishlist -->
+            <section id="wishlist">
+                <h2>Wishlist</h2>
+                <img src="static/oes_wishlist.png" alt="Wishlist page" />
+                <p>
+                    Wishlists capture date added and current price, letting customers move items to cart or delete them altogether—helpful for price‑watching electronics enthusiasts.
+                </p>
+            </section>
+
+            <!-- Profile -->
+            <section id="profile">
+                <h2>Profile Page</h2>
+                <img src="static/oes_profile.png" alt="User profile page" />
+                <p>
+                    From the profile hub, users can update personal details, examine order history, and inspect active cart items —all through clean, mobile‑responsive components.
+                </p>
+            </section>
+
+            <!-- Orders -->
+            <section id="orders">
+                <h2>Orders</h2>
+                <img src="static/oes_orders.png" alt="Orders list" />
+                <p>
+                    The orders dashboard lists past purchases with order IDs, statuses, prices at purchase time, and a one‑click <em>Buy Again</em> button for quick reorders.
+                </p>
+            </section>
+        </main>
+    </div>
+
+    <!-- Slider Script -->
+    <script>
+        function changeSlide(direction, sliderId) {
+            const slider = document.getElementById(sliderId);
+            const slides = slider.querySelector(".slides");
+            let index = parseInt(slides.dataset.index || "0");
+            const totalSlides = slides.children.length;
+            index = (index + direction + totalSlides) % totalSlides;
+            slides.dataset.index = index;
+            slides.style.transform = `translateX(-${index * 100}%)`;
+        }
+    </script>
+</body>
+</html>
