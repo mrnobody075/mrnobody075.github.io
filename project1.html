@@ -1,386 +1,299 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
-    <title>Workforce Efficiency System</title>
-    <style>
-        /* Global Styles */
-        * {
-            font-family: 'Space Grotesk', sans-serif;
-        }
-        body {
-            background-color: #121212;
-            color: white;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.8;
-        }
-        html {
-            scroll-behavior: smooth;
-        }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Workforce Efficiency System — Vishal Hegde</title>
 
-        /* Header */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 30px;
-            background-color: #000;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
+  <script src="https://cdn.tailwindcss.com"></script>
 
-        .logo {
-            font-size: 20px;
-            font-weight: bold;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-        }
-
-        .contact-btn {
-            background-color: #007bff;
-            padding: 8px 12px;
-            border-radius: 5px;
-        }footer {
-    background-color: #f8f8f8; /* Light gray background */
-    padding: 15px;
-    text-align: center;
-    font-size: 14px;
-    border-top: 1px solid #ddd; /* Subtle border */
-}
-
-footer ul {
-    list-style-type: none; /* Remove bullet points */
-    padding: 0;
-}
-
-footer ul li {
-    display: inline-block; /* Make items appear in a row */
-    margin: 0 10px;
-}
-
-footer a {
-    color: black;; /* Nice blue color */
-    text-decoration: none;
-}
-
-footer a:hover {
-    text-decoration: underline;
-}
-
-
-
-        /* Layout */
-        .container {
-            display: flex;
-            padding: 80px 30px 30px; /* Adjusted for fixed header */
-        }
-
-        /* Sidebar Navigation */
-        .sidebar {
-            width: 250px;
-            background: #1c1c1c;
-            padding: 20px;
-            position: fixed;
-            right: 0;
-            top: 80px;
-            height: calc(100vh - 80px);
-            overflow-y: auto;
-            border-left: 2px solid #333;
-        }
-
-        .sidebar h3 {
-            color: #ddd;
-            font-size: 18px;
-            margin-bottom: 10px;
-        }
-
-        .sidebar ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .sidebar ul li {
-            margin: 10px 0;
-        }
-
-        .sidebar ul li a {
-            color: #bbb;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .sidebar ul li a:hover {
-            color: #007bff;
-        }
-
-        /* Main Content */
-        .content {
-            width: 70%;
-            padding-right: 300px;
-        }
-
-        section {
-            padding: 50px 0;
-            border-bottom: 1px solid #333;
-        }
-
-        h2 {
-            color: #fff;
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-
-        p {
-            font-size: 16px;
-            color: #bbb;
-        }
-
-        /* Image Styling */
-        img {
-            width: 100%;
-            border-radius: 5px;
-            margin-top: 10px;
-        }
-
-        /* Slider Container */
-        .slider-container {
-            width: 100%;
-            max-width: 800px;
-            overflow: hidden;
-            position: relative;
-            margin: auto;
-            border-radius: 10px;
-        }
-
-        /* Slides Wrapper */
-        .slides {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-        }
-
-        /* Individual Slide */
-        .slide {
-            min-width: 100%;
-            transition: 0.5s;
-        }
-
-        .slide img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
-
-        /* Navigation Buttons */
-        .prev, .next {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            padding: 10px;
-            border: none;
-            cursor: pointer;
-            font-size: 24px;
-            border-radius: 50%;
-        }
-
-        .prev { left: 10px; }
-        .next { right: 10px; }
-
-        .prev:hover, .next:hover {
-            background-color: rgba(0, 0, 0, 0.8);
-        }
-    </style>
+  <style>
+    body {
+      background: #000; /* pure black */
+      color: #f9fafb;
+      min-height: 100vh;
+    }
+    /* Hide scrollbar for gallery but keep functionality */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
 </head>
-<body>
+<body class="antialiased selection:bg-white/20">
 
-    <header>
-        <div class="logo">VISHAL HEGDE</div>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="projects.html">Projects</a>
-            <a href="index.html#contact" class="contact-btn">Contact ↗</a>
+  <header class="fixed top-0 inset-x-0 z-50">
+    <div class="mx-auto max-w-5xl px-4">
+      <div class="mt-3 mb-2 flex items-center justify-between rounded-2xl border border-white/10 bg-black/50 px-4 py-3 backdrop-blur-md">
+        <a href="index.html" class="flex items-center gap-2 group">
+          <div class="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-sm font-semibold group-hover:bg-white/20 transition">
+            VH
+          </div>
+          <span class="text-sm font-medium sm:text-base group-hover:text-white transition">Vishal Hegde</span>
+        </a>
+
+        <nav class="hidden gap-6 text-sm text-neutral-200 md:flex">
+          <a href="index.html" class="hover:text-white transition">Home</a>
+          <a href="index.html#projects" class="text-white font-medium">Projects</a>
+          <a href="index.html#connect" class="hover:text-white transition">Connect</a>
         </nav>
-    </header>
 
-    <div class="container">
-        <!-- Right Sidebar Navigation -->
-        <aside class="sidebar">
-            <h3>Sections</h3>
-            <ul>
-                <li><a href="#overview">Overview</a></li>
-                <li><a href="#login">Login & Admin</a></li>
-                <li><a href="#detection">Worker Detection</a></li>
-                <li><a href="#count">Worker Count</a></li>
-                <li><a href="#trespassing">Trespassing Alerts</a></li>
-                <li><a href="#overcrowding">Overcrowding Alerts</a></li>
-                <li><a href="#visualization">Data Visualization</a></li>
-                <li><a href="#shifts">Shift Management</a></li>
-                <li><a href="#reports">Report Generation</a></li>
-                <li><a href="#access">Employee Self-Service</a></li>
-                <li><a href="#performance">Performance Reviews</a></li>
-                <li><a href="#leave">Leave Applications</a></li>
-            </ul>
-        </aside>
-
-        <!-- Main Content Area -->
-        <main class="content">
-            <section id="overview">
-                <h2>Overview</h2>
-                <p>The Workforce Efficiency & Attendance System is built on Flask for the backend and utilizes computer vision for worker detection, zone monitoring, and trespassing alerts. It features facial recognition for automated attendance tracking, an employee self-service portal, and admin controls for managing records and sending notifications. The system also provides comprehensive data visualization and generates detailed reports in Excel and PDF formats.</p>
-            </section>
-
-            <section id="login">
-                <h2>Login & Admin Dashboard</h2>
-                <div class="slider-container" id="slider1">
-                    <div class="slides">
-                        <div class="slide"><img src="static/wf_login.png" alt="Login"></div>
-                        <div class="slide"><img src="static/adminhome.png" alt="Admin Dashboard"></div>
-                        <div class="slide"><img src="static/employee.png" alt="Employee Portal"></div>
-                    </div>
-                    <button class="prev" onclick="changeSlide(-1, 'slider1')">&#10094;</button>
-                    <button class="next" onclick="changeSlide(1, 'slider1')">&#10095;</button>
-                </div>
-
-                <p>The system provides a separate login for employees and admins with role-based access controls. It is built using Flask in the backend</p>
-            </section>
-
-            <section id="detection">
-                <h2>Worker Detection</h2>
-                <div class="slider-container" id="slider2">
-                    <div class="slides">
-                        <div class="slide"><img src="static/corridorbsn.jpg" alt="Corridor View"></div>
-                        <div class="slide"><img src="static/classroom.jpg" alt="Classroom View"></div>
-                        <div class="slide"><img src="static/factory1.jpg" alt="Factory View"></div>
-                    </div>
-                    <button class="prev" onclick="changeSlide(-1, 'slider2')">&#10094;</button>
-                    <button class="next" onclick="changeSlide(1, 'slider2')">&#10095;</button>
-                </div>
-
-                <p>This part of the project utilizes the YOLOv8m object detection model to analyze recorded CCTV footage and identify persons (workers) in the video. The model processes each frame, detecting individuals and drawing bounding boxes around them. Above each bounding box, a confidence score (a floating-point value between 0 and 1) is displayed, representing the model's predicted probability that the detected object is a person.</p>
-            </section>
-            <section id="count">
-                <h2>Worker Count</h2>
-                <img src="static/workercount.jpg" alt="Worker Count">
-                <p>This part of the project utilizes the YOLOv8m object detection model to analyze recorded CCTV footage and count the number of workers present in each frame. OpenCV is used to overlay the total worker count on the screen, updating dynamically as the number of detected workers changes in each frame. This implementation enables post-processing worker monitoring using object detection and computer vision techniques.</p>
-
-            </section>
-
-            <section id="trespassing">
-                <h2>Trespassing Alerts</h2>
-                <img src="static/trespass.jpg" alt="Trespassing Detection">
-                <p>This project leverages the YOLOv8m object detection model to analyze recorded CCTV footage and monitor worker movement within a designated region of interest (ROI). A predefined ROI is set in the video, and OpenCV is used to track worker movement. If a detected worker crosses the ROI boundary, the system flags it as a trespassing event. This implementation enables automated surveillance and security monitoring by integrating object detection with region-based rule enforcement.</p>
-
-            </section>
-
-            <section id="overcrowding">
-                <h2>Overcrowding Alerts</h2>
-                <img src="static/specificzone.png" alt="Overcrowding Detection">
-                <p>This project utilizes the YOLOv8m object detection model to analyze recorded CCTV footage and monitor worker density within a designated region of interest (ROI). OpenCV is used to track the number of workers inside the ROI in real time. If the worker count exceeds a predefined overcrowding limit, the system displays an alert message: "Exceeds Limit." This implementation enables automated monitoring of workplace crowd density, ensuring compliance with safety regulations.</p>
-
-            </section>
-
-            <section id="visualization">
-                <h2>Data Visualization</h2>
-                <div class="slider-container" id="slider3">
-                    <div class="slides">
-                        <div class="slide"><img src="static/historicaldata1.png" alt="his1"></div>
-                        <div class="slide"><img src="static/historicaldata2.png" alt="his2"></div>
-
-                    </div>
-                    <button class="prev" onclick="changeSlide(-1, 'slider3')">&#10094;</button>
-                    <button class="next" onclick="changeSlide(1, 'slider3')">&#10095;</button>
-                </div>
-
-                <p>This part of the project extracts employee details from an SQLite3 database, including total employees, monthly attendance, yearly attendance, age distribution, and gender distribution. The retrieved data is processed using NumPy and Pandas for analysis and transformation.
-
-Matplotlib is used to generate visual representations, such as bar graphs for attendance trends and pie charts for demographic distribution. This implementation provides an insightful overview of workforce statistics through data-driven visualization.</p>
-            </section>
-
-            <section id="shifts">
-                <h2>Shift Management</h2>
-                <img src="static/notification.png" alt="Shift Management">
-
-                <p>Shift Management System with Email Notifications
-
-This project allows administrators to manage employee shifts and send notifications through webpage built using Flask via email using Python's smtplib with a Gmail SMTP server. The system supports updating shift schedules, notifying employees of shift changes, and sending custom emails. Employee details, including email addresses, are stored and retrieved from a database (SQLite3 or similar). The system ensures secure authentication with Gmail’s SMTP and handles email formatting, subject lines, and body content dynamically. The page provides a simple interface for admins to select employees, update shifts, and trigger email notifications in real-time. </p>
-
-            </section>
-
-            <section id="reports">
-
-                <h2>Report Generation</h2>
-                <p>This project automates the generation of employee data reports by fetching records from a database, visualizing key metrics such as monthly attendance trends, gender distribution, and age demographics, and compiling them into a structured PDF report using ReportLab. The system dynamically generates graphs with Matplotlib, embedding them within the PDF for clear insights. Additionally, it allows exporting employee data into a spreadsheet format for further analysis. Built with Flask, the application provides an efficient way to generate and download reports while implementing robust error handling to ensure reliability and smooth performance.</p>
-
-            </section>
-
-            <section id="access">
-                <h2>Employee Self-Service</h2>
-                <img src="static/selfservice.png" alt="Employee Access">
-
-                <p>Employees can access their records, update personal details, and request changes using the webpage.</p>
-
-            </section>
-
-            <section id="performance">
-                <h2>Performance Reviews</h2>
-                <img src="static/performancereview.png" alt="Performance Reviews">
-
-                <p>The managers and admins can upload their employees performance reviews into the database and employees can retrieve from the page. </p>
-
-            </section>
-            <section id="attendance">
-                <h2>Face Recognition based attendance system</h2>
-                <img src="static/attendancesystem.jpg" alt="AttendanceSystem">
-
-                <p>This project automates worker attendance using face recognition and a PyQt5 GUI. It captures real-time video, detects faces, and matches them with pre-stored images. Recognized workers are logged into an SQLite3 database with timestamps, preventing duplicate entries for the same day. The PyQt5 interface displays the live webcam feed, attendance table, and total recognized workers. The system uses OpenCV, face_recognition, and NumPy for face detection, and PyQt5 for UI.</p>
-
-            </section>
-
-            <section id="leave">
-                <h2>Leave Applications</h2>
-                <img src="static/leaveapp.png" alt="Leave Applications">
-
-                <p>Employees can apply for leaves, and managers can approve/reject requests via the webpage. The information is all updated to the SQLite3 database</p>
-
-            </section>
-        </main>
+        <button class="md:hidden p-1 text-neutral-200" aria-label="Menu">
+          <svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16"/>
+          </svg>
+        </button>
+      </div>
     </div>
-    <footer>
-    <p>Videos courtesy of YouTube creators and Shutterstock:</p>
-    <ul>
-        <li><a href="https://www.youtube.com/watch?v=8DJi4PrdFCg" target="_blank">YouTube Video 1</a></li>
-        <li><a href="https://www.youtube.com/watch?v=odyoqNhaRTY" target="_blank">YouTube Video 2</a></li>
-        <li><a href="https://www.shutterstock.com/video/clip-1100037295" target="_blank">Shutterstock Video</a></li>
-    </ul>
-    </footer>
+  </header>
 
+  <main class="mx-auto max-w-6xl px-4 pt-32 pb-16 text-white">
 
-    <script>
-        function changeSlide(direction, sliderId) {
-            const slider = document.getElementById(sliderId);
-            const slides = slider.querySelector(".slides");
-            let index = parseInt(slides.dataset.index || "0");
-            const totalSlides = slides.children.length;
-            index = (index + direction + totalSlides) % totalSlides;
-            slides.dataset.index = index;
-            slides.style.transform = `translateX(-${index * 100}%)`;
+    <section class="mb-12 border-b border-neutral-800 pb-8">
+      <div class="mb-4">
+        <span class="rounded-full border border-neutral-700 bg-neutral-900 px-3 py-1 text-xs text-neutral-400">Computer Vision & Web Dev</span>
+      </div>
+      <h1 class="text-3xl font-bold sm:text-5xl mb-4">Workforce Efficiency Monitoring</h1>
+      <p class="max-w-3xl text-lg text-neutral-400 leading-relaxed">
+        A comprehensive system combining Flask, YOLOv8, and OpenCV to automate attendance, monitor worker safety, and generate actionable insights via computer vision.
+      </p>
+
+      <div class="mt-6 flex flex-wrap gap-2 text-xs text-neutral-300">
+        <span class="rounded bg-neutral-800 px-2 py-1">Python</span>
+        <span class="rounded bg-neutral-800 px-2 py-1">Flask</span>
+        <span class="rounded bg-neutral-800 px-2 py-1">YOLOv8</span>
+        <span class="rounded bg-neutral-800 px-2 py-1">OpenCV</span>
+        <span class="rounded bg-neutral-800 px-2 py-1">SQLite3</span>
+        <span class="rounded bg-neutral-800 px-2 py-1">ReportLab</span>
+      </div>
+    </section>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+
+      <div class="lg:col-span-8 space-y-16">
+
+        <section id="overview" class="scroll-mt-32">
+          <h2 class="text-2xl font-semibold mb-4 text-white">Overview</h2>
+          <p class="text-neutral-300 leading-relaxed">
+            The Workforce Efficiency & Attendance System is built on Flask for the backend and utilizes computer vision for worker detection, zone monitoring, and trespassing alerts. It features facial recognition for automated attendance tracking, an employee self-service portal, and admin controls for managing records. The system also provides comprehensive data visualization and generates detailed reports in Excel and PDF formats.
+          </p>
+        </section>
+
+        <section id="login" class="scroll-mt-32">
+          <h2 class="text-2xl font-semibold mb-4 text-white">Login & Admin Dashboard</h2>
+          <div class="relative group rounded-xl border border-neutral-800 bg-neutral-900 overflow-hidden">
+            <div class="slider-wrapper relative h-64 sm:h-80 w-full">
+              <img src="static/wf_login.png" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-100 active-slide" alt="Login Screen">
+              <img src="static/adminhome.png" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-0" alt="Admin Dashboard">
+              <img src="static/employee.png" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-0" alt="Employee Portal">
+            </div>
+            <button class="prev-btn absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 p-2 rounded-full hover:bg-black/80 text-white">❮</button>
+            <button class="next-btn absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 p-2 rounded-full hover:bg-black/80 text-white">❯</button>
+          </div>
+          <p class="mt-4 text-sm text-neutral-400">
+            Secure login for employees and admins with role-based access controls built using Flask.
+          </p>
+        </section>
+
+        <section id="detection" class="scroll-mt-32">
+          <h2 class="text-2xl font-semibold mb-4 text-white">Worker Detection</h2>
+          <div class="relative group rounded-xl border border-neutral-800 bg-neutral-900 overflow-hidden">
+            <div class="slider-wrapper relative h-64 sm:h-80 w-full">
+              <img src="static/corridorbsn.jpg" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-100 active-slide" alt="Corridor">
+              <img src="static/classroom.jpg" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-0" alt="Classroom">
+              <img src="static/factory1.jpg" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-0" alt="Factory">
+            </div>
+            <button class="prev-btn absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 p-2 rounded-full hover:bg-black/80 text-white">❮</button>
+            <button class="next-btn absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 p-2 rounded-full hover:bg-black/80 text-white">❯</button>
+          </div>
+          <p class="mt-4 text-sm text-neutral-400">
+            Utilizes the <strong>YOLOv8m</strong> object detection model to analyze CCTV footage. The model draws bounding boxes around detected individuals with confidence scores, ensuring accurate identification in various environments.
+          </p>
+        </section>
+
+        <section id="count" class="scroll-mt-32">
+          <h2 class="text-2xl font-semibold mb-4 text-white">Real-time Worker Counting</h2>
+          <div class="rounded-xl border border-neutral-800 bg-neutral-900 overflow-hidden">
+            <img src="static/workercount.jpg" alt="Worker Count" class="w-full object-cover">
+          </div>
+          <p class="mt-4 text-neutral-300">
+            OpenCV overlays the total worker count dynamically as the number of detected workers changes in each frame, enabling efficient post-processing monitoring.
+          </p>
+        </section>
+
+        <section id="trespassing" class="scroll-mt-32">
+          <h2 class="text-2xl font-semibold mb-4 text-white">Trespassing Alerts</h2>
+          <div class="rounded-xl border border-neutral-800 bg-neutral-900 overflow-hidden">
+            <img src="static/trespass.jpg" alt="Trespassing" class="w-full object-cover">
+          </div>
+          <p class="mt-4 text-neutral-300">
+            A designated Region of Interest (ROI) is monitored. If a worker crosses this boundary, the system flags a trespassing event, integrating object detection with region-based rule enforcement.
+          </p>
+        </section>
+
+        <section id="overcrowding" class="scroll-mt-32">
+          <h2 class="text-2xl font-semibold mb-4 text-white">Overcrowding Detection</h2>
+          <div class="rounded-xl border border-neutral-800 bg-neutral-900 overflow-hidden">
+            <img src="static/specificzone.png" alt="Overcrowding" class="w-full object-cover">
+          </div>
+          <p class="mt-4 text-neutral-300">
+            If the worker density within a specific zone exceeds a predefined limit, the system triggers an "Exceeds Limit" alert, ensuring compliance with safety regulations.
+          </p>
+        </section>
+
+        <section id="visualization" class="scroll-mt-32">
+          <h2 class="text-2xl font-semibold mb-4 text-white">Data Visualization</h2>
+          <div class="relative group rounded-xl border border-neutral-800 bg-neutral-900 overflow-hidden">
+            <div class="slider-wrapper relative h-64 sm:h-80 w-full">
+              <img src="static/historicaldata1.png" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-100 active-slide" alt="Graph 1">
+              <img src="static/historicaldata2.png" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-0" alt="Graph 2">
+            </div>
+            <button class="prev-btn absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 p-2 rounded-full hover:bg-black/80 text-white">❮</button>
+            <button class="next-btn absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 p-2 rounded-full hover:bg-black/80 text-white">❯</button>
+          </div>
+          <p class="mt-4 text-neutral-300">
+            Extracts employee details from SQLite3 and processes them using NumPy and Pandas. Matplotlib generates bar graphs and pie charts for attendance trends, age, and gender distribution.
+          </p>
+        </section>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <section id="shifts" class="scroll-mt-32">
+                <h3 class="text-xl font-bold mb-3 text-white">Shift Management</h3>
+                <img src="static/notification.png" class="rounded-lg border border-neutral-800 mb-3 w-full" alt="Shift Mgmt">
+                <p class="text-sm text-neutral-400">Admins can manage schedules and trigger automated email notifications using Python's smtplib.</p>
+            </section>
+
+            <section id="access" class="scroll-mt-32">
+                <h3 class="text-xl font-bold mb-3 text-white">Employee Portal</h3>
+                <img src="static/selfservice.png" class="rounded-lg border border-neutral-800 mb-3 w-full" alt="Self Service">
+                <p class="text-sm text-neutral-400">Employees can access records, update details, and request changes via a personal dashboard.</p>
+            </section>
+
+            <section id="performance" class="scroll-mt-32">
+                <h3 class="text-xl font-bold mb-3 text-white">Performance Reviews</h3>
+                <img src="static/performancereview.png" class="rounded-lg border border-neutral-800 mb-3 w-full" alt="Reviews">
+                <p class="text-sm text-neutral-400">Digital storage and retrieval of performance reviews for transparent feedback.</p>
+            </section>
+
+            <section id="leave" class="scroll-mt-32">
+                <h3 class="text-xl font-bold mb-3 text-white">Leave Applications</h3>
+                <img src="static/leaveapp.png" class="rounded-lg border border-neutral-800 mb-3 w-full" alt="Leaves">
+                <p class="text-sm text-neutral-400">Streamlined leave request and approval workflow integrated with the database.</p>
+            </section>
+        </div>
+
+        <section id="attendance" class="scroll-mt-32">
+            <h2 class="text-2xl font-semibold mb-4 text-white">Face Recognition Attendance</h2>
+            <div class="rounded-xl border border-neutral-800 bg-neutral-900 overflow-hidden">
+                <img src="static/attendancesystem.jpg" alt="Face Rec" class="w-full object-cover">
+            </div>
+            <p class="mt-4 text-neutral-300">
+                Automates attendance using a PyQt5 GUI and <code>face_recognition</code> library. It matches real-time video with pre-stored images and logs unique daily entries into the database.
+            </p>
+        </section>
+
+         <section id="reports" class="scroll-mt-32 border-l-2 border-neutral-700 pl-6">
+            <h2 class="text-xl font-semibold mb-2 text-white">Automated Reporting</h2>
+            <p class="text-neutral-300">
+                The system uses <strong>ReportLab</strong> to compile data into structured PDF reports. It dynamically embeds Matplotlib graphs for clear insights and allows exporting data to spreadsheets for further analysis.
+            </p>
+        </section>
+
+      </div>
+
+      <aside class="hidden lg:block lg:col-span-4">
+        <div class="sticky top-28 space-y-8">
+            <div class="rounded-2xl border border-neutral-800 bg-neutral-900/50 p-6 backdrop-blur-sm">
+                <h3 class="mb-4 text-sm font-semibold uppercase tracking-wider text-neutral-500">Table of Contents</h3>
+                <nav class="space-y-2 text-sm">
+                    <a href="#overview" class="block text-neutral-300 hover:text-white hover:translate-x-1 transition-all">Overview</a>
+                    <a href="#login" class="block text-neutral-300 hover:text-white hover:translate-x-1 transition-all">Login & Admin</a>
+                    <a href="#detection" class="block text-neutral-300 hover:text-white hover:translate-x-1 transition-all">Worker Detection</a>
+                    <a href="#count" class="block text-neutral-300 hover:text-white hover:translate-x-1 transition-all">Worker Counting</a>
+                    <a href="#trespassing" class="block text-neutral-300 hover:text-white hover:translate-x-1 transition-all">Trespassing Alerts</a>
+                    <a href="#visualization" class="block text-neutral-300 hover:text-white hover:translate-x-1 transition-all">Data Visualization</a>
+                    <a href="#shifts" class="block text-neutral-300 hover:text-white hover:translate-x-1 transition-all">Shift Management</a>
+                    <a href="#reports" class="block text-neutral-300 hover:text-white hover:translate-x-1 transition-all">Reports</a>
+                    <a href="#attendance" class="block text-neutral-300 hover:text-white hover:translate-x-1 transition-all">Face Recognition</a>
+                </nav>
+            </div>
+
+            <div class="rounded-2xl border border-neutral-800 bg-neutral-900/50 p-6">
+                <h3 class="mb-2 text-sm font-semibold text-white">Interested in this project?</h3>
+                <p class="mb-4 text-xs text-neutral-400">Check out the code on GitHub or contact me for a demo.</p>
+                <a href="https://github.com/mrnobody075" class="block w-full rounded-lg bg-white px-4 py-2 text-center text-sm font-bold text-black hover:bg-neutral-200 transition">
+                    View on GitHub
+                </a>
+            </div>
+        </div>
+      </aside>
+
+    </div>
+
+  </main>
+
+  <footer class="border-t border-neutral-900 bg-black py-8 text-sm text-neutral-500">
+    <div class="mx-auto max-w-5xl px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+      <div class="text-center md:text-left">
+        <p>© <span id="year"></span> Vishal Hegde. All rights reserved.</p>
+        <p class="text-xs mt-2">
+            Videos courtesy of <a href="#" class="underline hover:text-white">YouTube creators</a> and Shutterstock.
+        </p>
+      </div>
+      <div class="flex gap-4">
+        <a href="index.html" class="hover:text-white transition">Home</a>
+        <a href="index.html#projects" class="hover:text-white transition">Projects</a>
+        <a href="mailto:hegdevishals75@gmail.com" class="hover:text-white transition">Contact</a>
+      </div>
+    </div>
+    <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const sliders = document.querySelectorAll('.group'); // Selecting the slider containers
+
+      sliders.forEach(slider => {
+        const prevBtn = slider.querySelector('.prev-btn');
+        const nextBtn = slider.querySelector('.next-btn');
+        const images = slider.querySelectorAll('img');
+
+        // Only initialize if buttons and multiple images exist
+        if (prevBtn && nextBtn && images.length > 1) {
+          let currentIndex = 0;
+
+          const updateSlide = (index) => {
+            images.forEach((img, i) => {
+               if (i === index) {
+                   img.classList.remove('opacity-0');
+                   img.classList.add('opacity-100');
+               } else {
+                   img.classList.remove('opacity-100');
+                   img.classList.add('opacity-0');
+               }
+            });
+          };
+
+          nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % images.length;
+            updateSlide(currentIndex);
+          });
+
+          prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            updateSlide(currentIndex);
+          });
+        } else if (prevBtn && nextBtn) {
+            // Hide buttons if only 1 image
+            prevBtn.style.display = 'none';
+            nextBtn.style.display = 'none';
         }
-    </script>
-   
-
+      });
+    });
+  </script>
 
 </body>
 </html>
