@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>Workforce Efficiency System Updated — Vishal Hegde</title>
+
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      background: #000; /* pure black */
+      color: #f9fafb;
+      min-height: 100vh;
+    }
+    /* Hide scrollbar for gallery but keep functionality */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-white/20">
+
+  <header class="fixed top-0 inset-x-0 z-50">
+    <div class="mx-auto max-w-5xl px-4">
+      <div class="mt-3 mb-2 flex items-center justify-between rounded-2xl border border-white/10 bg-black/50 px-4 py-3 backdrop-blur-md">
+        <a href="index.html" class="flex items-center gap-2 group">
+          <div class="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-sm font-semibold group-hover:bg-white/20 transition">
+            VH
+          </div>
+          <span class="text-sm font-medium sm:text-base group-hover:text-white transition">Vishal Hegde</span>
+        </a>
+
+        <nav class="hidden gap-6 text-sm text-neutral-200 md:flex">
+          <a href="index.html" class="hover:text-white transition">Home</a>
+          <a href="index.html#projects" class="text-white font-medium">Projects</a>
+          <a href="index.html#connect" class="hover:text-white transition">Connect</a>
+        </nav>
+
+        <button class="md:hidden p-1 text-neutral-200" aria-label="Menu">
+          <svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="mx-auto max-w-6xl px-4 pt-32 pb-16 text-white">
+
+    <section class="mb-12 border-b border-neutral-800 pb-8">
+      <div class="mb-4">
+         <span class="rounded bg-blue-900/50 border border-blue-800 px-2 py-0.5 text-[10px] text-blue-200 uppercase tracking-wide">Updated</span>
+        <span class="rounded-full border border-neutral-700 bg-neutral-900 px-3 py-1 text-xs text-neutral-400">Computer Vision & Web Dev</span>
+      </div>
+
+      <h1 class="text-3xl font-bold sm:text-5xl mb-4">Workforce Efficiency System Using Computer Vision and Django</h1>
+
+      <p class="max-w-3xl text-lg text-neutral-400 leading-relaxed">
+        A comprehensive monitoring solution combining <strong>Django</strong>, <strong>YOLOv8</strong>, and <strong>DeepSORT</strong> to automate attendance, track movement, and generate actionable workforce insights.
+      </p>
+
+      <div class="mt-6 flex flex-wrap gap-2 text-xs text-neutral-300">
+        <span class="rounded bg-neutral-800 px-2 py-1">Python</span>
+        <span class="rounded bg-neutral-800 px-2 py-1">Django</span>
+        <span class="rounded bg-neutral-800 px-2 py-1">YOLOv8</span>
+        <span class="rounded bg-neutral-800 px-2 py-1">DeepSORT</span>
+        <span class="rounded bg-neutral-800 px-2 py-1">OpenCV</span>
+        <span class="rounded bg-neutral-800 px-2 py-1">PostgreSQL</span>
+      </div>
+    </section>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+
+      <div class="lg:col-span-8 space-y-16">
+
+        <section id="overview" class="scroll-mt-32">
+          <h2 class="text-2xl font-semibold mb-4 text-white">Overview</h2>
+          <p class="text-neutral-300 leading-relaxed">
+            The Workforce Efficiency & Attendance System is a full-stack application built on <strong>Django</strong> that leverages computer vision for worker detection and tracking. It features facial recognition for automated attendance, DeepSORT for entrance counting, and a robust admin panel. All data is securely stored in <strong>PostgreSQL</strong> and visualized through interactive charts.
+          </p>
+        </section>
+
+        <section id="login" class="scroll-mt-32">
+          <div class="flex items-center gap-2 mb-4">
+             <h2 class="text-2xl font-semibold text-white">Django Auth & Session Management</h2>
+             <span class="rounded bg-blue-900/50 border border-blue-800 px-2 py-0.5 text-[10px] text-blue-200 uppercase tracking-wide">Updated</span>
+          </div>
+
+          <div class="relative group rounded-xl border border-neutral-800 bg-neutral-900 overflow-hidden">
+            <div class="slider-wrapper relative h-64 sm:h-80 w-full">
+              <img src="static/wf_login.png" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-100 active-slide" alt="Login Screen">
+              <img src="static/adminhome.png" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-0" alt="Admin Dashboard">
+              <img src="static/employee.png" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-0" alt="Employee Portal">
+            </div>
+            <button class="prev-btn absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 p-2 rounded-full hover:bg-black/80 text-white">❮</button>
+            <button class="next-btn absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 p-2 rounded-full hover:bg-black/80 text-white">❯</button>
+          </div>
+          <p class="mt-4 text-sm text-neutral-400">
+            The system now implements robust <strong>Django Session Management</strong> to handle authentication and authorization. This ensures secure, individual access control for every employee and administrator, replacing the previous basic Flask login.
+          </p>
+        </section>
+
+        <section id="detection" class="scroll-mt-32">
+          <h2 class="text-2xl font-semibold mb-4 text-white">AI Worker Detection</h2>
+          <div class="relative group rounded-xl border border-neutral-800 bg-neutral-900 overflow-hidden">
+            <div class="slider-wrapper relative h-64 sm:h-80 w-full">
+              <img src="static/corridorbsn.jpg" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-100 active-slide" alt="Corridor Surveillance">
+              <img src="static/classroom.jpg" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-0" alt="Classroom Monitoring">
+              <img src="static/factory1.jpg" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-0" alt="Factory Floor">
+            </div>
+            <button class="prev-btn absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 p-2 rounded-full hover:bg-black/80 text-white">❮</button>
+            <button class="next-btn absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 p-2 rounded-full hover:bg-black/80 text-white">❯</button>
+          </div>
+          <p class="mt-4 text-sm text-neutral-400">
+            Powered by the <strong>YOLOv8m</strong> model, the system analyzes CCTV footage frame-by-frame to identify individuals, drawing bounding boxes with high-confidence probability scores.
+          </p>
+        </section>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <section id="count" class="scroll-mt-32">
+                <h3 class="text-xl font-bold mb-3 text-white">Real-Time Counting</h3>
+                <div class="rounded-lg border border-neutral-800 overflow-hidden mb-3">
+                    <img src="static/workercount.jpg" alt="Worker Count" class="w-full object-cover">
+                </div>
+                <p class="text-sm text-neutral-400">OpenCV dynamically overlays the total worker count on the live feed, enabling instant density analysis.</p>
+            </section>
+
+            <section id="tracking" class="scroll-mt-32">
+                <div class="flex items-center gap-2 mb-3">
+                    <h3 class="text-xl font-bold text-white">DeepSORT Tracking</h3>
+                    <span class="rounded bg-blue-900/50 border border-blue-800 px-2 py-0.5 text-[10px] text-blue-200 uppercase tracking-wide">New</span>
+                </div>
+                <div class="rounded-lg border border-neutral-800 bg-neutral-900 h-48 mb-3 flex items-center justify-center">
+                    <img src="" alt="DeepSORT Tracking Demo" class="w-full h-full object-cover opacity-50">
+                    <span class="absolute text-neutral-600 text-sm">Image Coming Soon</span>
+                </div>
+                <p class="text-sm text-neutral-400">
+                    <strong>Update to previous algorithm:</strong> We replaced the simple ROI-based trespassing alerts with <strong>DeepSORT</strong>. This now tracks specific workers through entrances and exits, maintaining a precise count of people entering versus leaving.
+                </p>
+            </section>
+        </div>
+
+        <section id="heatmaps" class="scroll-mt-32">
+          <div class="flex items-center gap-2 mb-4">
+             <h2 class="text-2xl font-semibold text-white">Crowd Density Heatmaps</h2>
+             <span class="rounded bg-blue-900/50 border border-blue-800 px-2 py-0.5 text-[10px] text-blue-200 uppercase tracking-wide">New</span>
+          </div>
+          <div class="rounded-xl border border-neutral-800 bg-neutral-900 h-64 flex items-center justify-center overflow-hidden relative">
+            <img src="" alt="Heatmap Visualization" class="w-full h-full object-cover opacity-50">
+            <span class="absolute text-neutral-600">Visualization Coming Soon</span>
+          </div>
+          <p class="mt-4 text-neutral-300">
+            <strong>Update to Overcrowding Detection:</strong> Instead of simple limit alerts, the system now generates real-time heatmaps using <strong>YOLOv8</strong> and <strong>JetColormap</strong>. This provides a visual representation of high-traffic zones, allowing for better crowd management and safety planning.
+          </p>
+        </section>
+
+        <section id="visualization" class="scroll-mt-32">
+          <h2 class="text-2xl font-semibold mb-4 text-white">Data Visualization & Insights</h2>
+          <div class="relative group rounded-xl border border-neutral-800 bg-neutral-900 overflow-hidden">
+            <div class="slider-wrapper relative h-64 sm:h-80 w-full">
+              <img src="static/historicaldata1.png" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-100 active-slide" alt="Attendance Trends">
+              <img src="static/historicaldata2.png" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-0" alt="Demographics Chart">
+            </div>
+            <button class="prev-btn absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 p-2 rounded-full hover:bg-black/80 text-white">❮</button>
+            <button class="next-btn absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 p-2 rounded-full hover:bg-black/80 text-white">❯</button>
+          </div>
+          <p class="mt-4 text-neutral-300">
+            The system processes <strong>PostgreSQL</strong> data using Pandas and generates visual reports with Matplotlib, offering insights into attendance trends, age demographics, and gender distribution.
+          </p>
+        </section>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <section id="shifts" class="scroll-mt-32">
+                <h3 class="text-xl font-bold mb-3 text-white">Shift Management</h3>
+                <img src="static/notification.png" class="rounded-lg border border-neutral-800 mb-3 w-full" alt="Shift Mgmt">
+                <p class="text-sm text-neutral-400">Admins can update schedules and trigger automated email notifications via Python's SMTP library.</p>
+            </section>
+
+            <section id="access" class="scroll-mt-32">
+                <h3 class="text-xl font-bold mb-3 text-white">Self-Service Portal</h3>
+                <img src="static/selfservice.png" class="rounded-lg border border-neutral-800 mb-3 w-full" alt="Self Service">
+                <p class="text-sm text-neutral-400">Employees can log in to view their own records, update personal details, and check attendance history.</p>
+            </section>
+
+            <section id="performance" class="scroll-mt-32">
+                <h3 class="text-xl font-bold mb-3 text-white">Performance Reviews</h3>
+                <img src="static/performancereview.png" class="rounded-lg border border-neutral-800 mb-3 w-full" alt="Reviews">
+                <p class="text-sm text-neutral-400">Digital storage for performance evaluations, accessible by both managers and employees.</p>
+            </section>
+
+            <section id="leave" class="scroll-mt-32">
+                <h3 class="text-xl font-bold mb-3 text-white">Leave Applications</h3>
+                <img src="static/leaveapp.png" class="rounded-lg border border-neutral-800 mb-3 w-full" alt="Leaves">
+                <p class="text-sm text-neutral-400">Streamlined workflow for applying for leave and receiving approval/rejection updates.</p>
+            </section>
+        </div>
+
+        <section id="attendance" class="scroll-mt-32">
+            <div class="flex items-center gap-2 mb-4">
+                <h2 class="text-2xl font-semibold text-white">Attendance & Helmet Detection</h2>
+                <span class="rounded bg-blue-900/50 border border-blue-800 px-2 py-0.5 text-[10px] text-blue-200 uppercase tracking-wide">Logic Updated</span>
+            </div>
+            <div class="rounded-xl border border-neutral-800 bg-neutral-900 overflow-hidden">
+                <img src="static/attendancesystem.jpg" alt="Face Rec" class="w-full object-cover">
+            </div>
+            <p class="mt-4 text-neutral-300">
+                A dedicated PyQt5 interface captures real-time video for automated attendance. This system now integrates <strong>YOLOv8 Helmet Detection</strong> with <code>face_recognition</code>. Attendance is marked <strong>only if</strong> the worker is successfully identified AND is detected wearing a safety helmet, ensuring strict compliance with safety regulations.
+            </p>
+        </section>
+
+         <section id="reports" class="scroll-mt-32 border-l-2 border-neutral-700 pl-6">
+            <h2 class="text-xl font-semibold mb-2 text-white">Automated Reporting</h2>
+            <p class="text-neutral-300">
+                Admins can generate comprehensive PDF reports using <strong>ReportLab</strong>. These reports include embedded graphs and statistics, perfect for weekly or monthly audits. Data can also be exported to Excel for further offline analysis.
+            </p>
+        </section>
+
+      </div>
+
+      <aside class="hidden lg:block lg:col-span-4">
+        <div class="sticky top-28 space-y-8">
+            <div class="rounded-2xl border border-neutral-800 bg-neutral-900/50 p-6 backdrop-blur-sm">
+                <h3 class="mb-4 text-sm font-semibold uppercase tracking-wider text-neutral-500">Table of Contents</h3>
+                <nav class="space-y-2 text-sm">
+                    <a href="#overview" class="block text-neutral-300 hover:text-white hover:translate-x-1 transition-all">Overview</a>
+                    <a href="#login" class="block text-neutral-300 hover:text-white hover:translate-x-1 transition-all">Django Auth</a>
+                    <a href="#detection" class="block text-neutral-300 hover:text-white hover:translate-x-1 transition-all">Worker Detection</a>
+                    <a href="#count" class="block text-neutral-300 hover:text-white hover:translate-x-1 transition-all">Real-Time Counting</a>
+                    <a href="#tracking" class="block text-neutral-300 hover:text-white hover:translate-x-1 transition-all">DeepSORT Tracking</a>
+                    <a href="#heatmaps" class="block text-neutral-300 hover:text-white hover:translate-x-1 transition-all">Heatmaps</a>
+                    <a href="#visualization" class="block text-neutral-300 hover:text-white hover:translate-x-1 transition-all">Data Visualization</a>
+                    <a href="#shifts" class="block text-neutral-300 hover:text-white hover:translate-x-1 transition-all">Shift Management</a>
+                    <a href="#attendance" class="block text-neutral-300 hover:text-white hover:translate-x-1 transition-all">Face & Helmet</a>
+                    <a href="#reports" class="block text-neutral-300 hover:text-white hover:translate-x-1 transition-all">Reports</a>
+                </nav>
+            </div>
+
+            <div class="rounded-2xl border border-neutral-800 bg-neutral-900/50 p-6">
+                <h3 class="mb-2 text-sm font-semibold text-white">Interested in this project?</h3>
+                <p class="mb-4 text-xs text-neutral-400">View the source code, installation steps, and documentation.</p>
+                <a href="https://github.com/mrnobody075/Workforce-Efficiency-System-Using-Computer-Vision-and-Django" target="_blank" class="block w-full rounded-lg bg-white px-4 py-2 text-center text-sm font-bold text-black hover:bg-neutral-200 transition">
+                    View on GitHub
+                </a>
+            </div>
+        </div>
+      </aside>
+
+    </div>
+
+  </main>
+
+  <footer class="border-t border-neutral-900 bg-black py-8 text-sm text-neutral-500">
+    <div class="mx-auto max-w-5xl px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+      <div class="text-center md:text-left">
+        <p>© <span id="year"></span> Vishal Hegde. All rights reserved.</p>
+        <p class="text-xs mt-2">
+            Videos courtesy of <a href="#" class="underline hover:text-white">YouTube creators</a> and Shutterstock.
+        </p>
+      </div>
+      <div class="flex gap-4">
+        <a href="index.html" class="hover:text-white transition">Home</a>
+        <a href="index.html#projects" class="hover:text-white transition">Projects</a>
+        <a href="mailto:hegdevishals75@gmail.com" class="hover:text-white transition">Contact</a>
+      </div>
+    </div>
+    <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const sliders = document.querySelectorAll('.group'); // Selecting the slider containers
+
+      sliders.forEach(slider => {
+        const prevBtn = slider.querySelector('.prev-btn');
+        const nextBtn = slider.querySelector('.next-btn');
+        const images = slider.querySelectorAll('img');
+
+        // Only initialize if buttons and multiple images exist
+        if (prevBtn && nextBtn && images.length > 1) {
+          let currentIndex = 0;
+
+          const updateSlide = (index) => {
+            images.forEach((img, i) => {
+               if (i === index) {
+                   img.classList.remove('opacity-0');
+                   img.classList.add('opacity-100');
+               } else {
+                   img.classList.remove('opacity-100');
+                   img.classList.add('opacity-0');
+               }
+            });
+          };
+
+          nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % images.length;
+            updateSlide(currentIndex);
+          });
+
+          prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            updateSlide(currentIndex);
+          });
+        } else if (prevBtn && nextBtn) {
+            // Hide buttons if only 1 image
+            prevBtn.style.display = 'none';
+            nextBtn.style.display = 'none';
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
